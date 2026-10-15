@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday, Yafi bhai!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;800&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F1FB; --ink:#1D2040; --muted:#5A5E86; --line:#D9D3EA; --star:#E7B7D1;
+  --accent:#C93A69; --on-accent:#FFFFFF; --glow:rgba(255,201,120,.5);
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#12142A; --ink:#F3EFFF; --muted:#A9ACD1; --line:#343A73; --star:#FFFFFF;
+    --accent:#F7A8C0; --on-accent:#12142A; --glow:rgba(255,201,120,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12142A; --ink:#F3EFFF; --muted:#A9ACD1; --line:#343A73; --star:#FFFFFF;
+  --accent:#F7A8C0; --on-accent:#12142A; --glow:rgba(255,201,120,.25);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none !important}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);
+  font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN",system-ui,sans-serif;line-height:1.5;overflow-x:hidden}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+#sky{position:fixed;inset:0;z-index:0;pointer-events:none}
+#sky i{position:absolute;border-radius:50%;background:var(--star);animation:tw 3s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.9}}
+#fx{position:fixed;inset:0;pointer-events:none;z-index:8;overflow:hidden}
+#fxc{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:9}
+.fl{position:absolute;bottom:-40px;animation:floatUp 2.6s ease-out forwards}
+@keyframes floatUp{0%{transform:translateY(0) rotate(-10deg);opacity:0}15%{opacity:1}100%{transform:translateY(-70vh) rotate(12deg);opacity:0}}
+main{position:relative;z-index:1;width:100%;max-width:520px;margin:0 auto}
+#scene{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:22px 20px 28px}
+.to{margin:8px 0 0;font-family:"Shippori Mincho B1",Georgia,serif;font-weight:800;font-size:clamp(1.15rem,5vw,1.5rem);line-height:1.35}
+.stage{position:relative;width:min(62vw,260px);margin:6px auto 0}
+#boy{cursor:pointer;-webkit-tap-highlight-color:transparent}
+#boy:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:4px;border-radius:12px}
+.stage svg{display:block;width:100%;height:auto;overflow:visible}
+.hey{position:absolute;top:2%;right:-6%;z-index:2;pointer-events:none;opacity:0;
+  font-family:"Shippori Mincho B1",Georgia,serif;font-weight:800;font-size:1.5rem;color:var(--accent)}
+.hey.show{animation:hey 1s ease-out}
+@keyframes hey{0%{opacity:0;transform:scale(.4) rotate(-12deg)}20%{opacity:1;transform:scale(1.2) rotate(8deg)}70%{opacity:1;transform:scale(1) rotate(4deg)}100%{opacity:0;transform:translateY(-22px)}}
+.caption{font-family:"Shippori Mincho B1",Georgia,serif;font-weight:800;font-size:clamp(1.8rem,8.5vw,2.7rem);
+  line-height:1.15;margin:10px 0 0;min-height:2.4em;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;max-width:100%}
+.caption.big{font-size:clamp(2.8rem,15vw,4.8rem);color:var(--accent);min-height:1.2em}
+.w{display:inline-block;white-space:nowrap}
+.ch{display:inline-block;opacity:0;transform:translateY(16px) scale(.6);animation:pop .45s cubic-bezier(.2,1.5,.4,1) forwards;animation-delay:calc(var(--d)*45ms)}
+@keyframes pop{to{opacity:1;transform:none}}
+.name{margin:4px 0 0;font-family:"Shippori Mincho B1",Georgia,serif;font-weight:800;font-size:clamp(2rem,10vw,3.2rem);
+  background:linear-gradient(var(--accent),var(--accent)) 0 100%/100% .1em no-repeat;padding-bottom:.05em}
+.note{margin:10px 0 0;color:var(--muted);max-width:30ch}
+#cake{width:min(54vw,200px);margin:8px auto 0}
+#cake svg{width:100%;height:auto;display:block;overflow:visible}
+.flame{transform-origin:center bottom;animation:flick .5s ease-in-out infinite alternate}
+.flame:nth-child(2){animation-delay:.15s}.flame:nth-child(3){animation-delay:.3s}
+@keyframes flick{from{transform:scale(1,1) rotate(-4deg)}to{transform:scale(.88,1.12) rotate(4deg)}}
+.out .flame{display:none}
+.smoke{display:none;opacity:0}
+.out .smoke{display:inline;animation:smoke 1.6s ease-out forwards}
+@keyframes smoke{0%{opacity:.8;transform:translateY(0)}100%{opacity:0;transform:translateY(-34px)}}
+.ctrl{margin-top:auto;padding-top:22px;display:flex;flex-direction:column;align-items:center;gap:16px;width:100%}
+.dots{display:flex;gap:10px}
+.dots i{width:10px;height:10px;border-radius:50%;background:var(--line);transition:background .3s,transform .3s}
+.dots i.on{background:var(--accent);transform:scale(1.25)}
+.btn{font:inherit;font-weight:700;font-size:1.15rem;cursor:pointer;border:0;background:var(--accent);color:var(--on-accent);
+  border-radius:16px;padding:15px 38px;box-shadow:0 8px 28px var(--glow);transition:transform .15s}
+.btn:active{transform:scale(.96)}
+.btn.soft{background:transparent;color:var(--ink);border:2px solid var(--line);box-shadow:none}
+/* boy */
+#all{transform-origin:150px 330px;animation:breathe 3.2s ease-in-out infinite}
+@keyframes breathe{50%{transform:translateY(-3px)}}
+#armR{transform-origin:188px 190px}#armL{transform-origin:112px 190px}
+#armR,#armL{transition:transform .4s ease}
+.cheer #armR{transform:rotate(-158deg)}.cheer #armL{transform:rotate(158deg)}
+#hop{transform-origin:150px 330px}
+.cheer #hop{animation:hop .6s ease-in-out infinite}
+@keyframes hop{50%{transform:translateY(-26px)}}
+.blink{transform-origin:150px 119px;animation:blink 4s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.08)}}
+.hat{transform-origin:150px 60px;animation:wob 1.4s ease-in-out infinite alternate}
+@keyframes wob{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .ch{opacity:1;transform:none}#sky i{opacity:.5}
+}
+</style>
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<div id="fx" aria-hidden="true"></div>
+<canvas id="fxc" aria-hidden="true"></canvas>
+
+<main>
+  <section id="scene">
+    <p class="to">For Yafi bhai 🎂</p>
+
+    <div class="stage" id="stage">
+      <div class="hey" id="hey" aria-hidden="true">Hehe!</div>
+      <svg id="boy" viewBox="0 0 300 350" role="button" tabindex="0" aria-label="The boy. Tap to poke him">
+        <ellipse cx="150" cy="338" rx="100" ry="10" fill="#000" opacity=".16"/>
+        <g id="hop"><g id="all">
+          <rect x="70" y="292" width="160" height="44" rx="22" fill="#3B3F6B"/>
+          <path d="M104 202 Q104 172 130 168 L170 168 Q196 172 196 202 L202 298 L98 298 Z" fill="#7C83FF"/>
+          <path d="M132 168 L150 194 L168 168 Z" fill="#fff" opacity=".92"/>
+          <rect x="138" y="148" width="24" height="26" rx="9" fill="#F2C29B"/>
+          <g id="armL">
+            <line x1="112" y1="192" x2="140" y2="262" stroke="#7C83FF" stroke-width="22" stroke-linecap="round"/>
+            <circle cx="142" cy="265" r="12" fill="#FFD9B8"/>
+          </g>
+          <g id="armR">
+            <line x1="188" y1="192" x2="160" y2="262" stroke="#7C83FF" stroke-width="22" stroke-linecap="round"/>
+            <circle cx="158" cy="265" r="12" fill="#FFD9B8"/>
+          </g>
+          <g id="head">
+            <circle cx="94" cy="120" r="9" fill="#F2C29B"/>
+            <circle cx="206" cy="120" r="9" fill="#F2C29B"/>
+            <circle cx="150" cy="115" r="56" fill="#FFD9B8"/>
+            <path d="M93 112 Q88 52 150 48 Q212 52 207 112 Q198 84 176 80 Q164 94 150 82 Q136 94 124 80 Q102 84 93 112 Z" fill="#2A2438"/>
+            <path d="M112 58 L104 34 L132 50 Z M146 50 L156 26 L168 50 Z M172 52 L192 36 L194 64 Z" fill="#2A2438"/>
+            <circle cx="110" cy="136" r="10" fill="#FF8FA3" opacity=".45"/>
+            <circle cx="190" cy="136" r="10" fill="#FF8FA3" opacity=".45"/>
+            <g id="eyesOpen" class="blink">
+              <ellipse cx="128" cy="119" rx="12" ry="14" fill="#fff" stroke="#2A2438" stroke-width="2"/>
+              <ellipse cx="172" cy="119" rx="12" ry="14" fill="#fff" stroke="#2A2438" stroke-width="2"/>
+              <circle cx="129" cy="122" r="8" fill="#2A2438"/><circle cx="171" cy="122" r="8" fill="#2A2438"/>
+              <circle cx="132" cy="118" r="3" fill="#fff"/><circle cx="174" cy="118" r="3" fill="#fff"/>
+            </g>
+            <g id="eyesHappy" fill="none" stroke="#2A2438" stroke-width="4" stroke-linecap="round" style="display:none">
+              <path d="M114 124 Q128 106 142 124"/><path d="M158 124 Q172 106 186 124"/>
+            </g>
+            <path id="smile" d="M136 146 Q150 160 164 146" fill="none" stroke="#2A2438" stroke-width="3.5" stroke-linecap="round"/>
+            <g id="grin" style="display:none">
+              <path d="M128 140 Q150 172 172 140 Z" fill="#7A2540"/>
+              <path d="M138 152 Q150 166 162 152 Q150 148 138 152 Z" fill="#FF8FA3"/>
+            </g>
+            <g class="hat">
+              <path d="M118 62 L150 -2 L182 62 Z" fill="#C93A69"/>
+              <path d="M130 40 L170 40 M124 52 L176 52" stroke="#FFC978" stroke-width="5" stroke-linecap="round"/>
+              <ellipse cx="150" cy="62" rx="36" ry="7" fill="#FFC978"/>
+              <circle cx="150" cy="-4" r="8" fill="#FFC978"/>
+            </g>
+          </g>
+        </g></g>
+      </svg>
+    </div>
+
+    <p class="caption" id="caption" aria-live="polite"></p>
+    <p class="name" id="name" hidden>Yafi bhai!</p>
+    <p class="note" id="note" hidden></p>
+
+    <div id="cake" hidden aria-hidden="true">
+      <svg viewBox="0 0 200 170">
+        <ellipse cx="100" cy="158" rx="84" ry="8" fill="#000" opacity=".14"/>
+        <rect x="24" y="108" width="152" height="46" rx="12" fill="#F7A8C0"/>
+        <rect x="38" y="76" width="124" height="38" rx="11" fill="#FFD9B8"/>
+        <path d="M24 122 Q36 134 48 122 Q60 134 72 122 Q84 134 96 122 Q108 134 120 122 Q132 134 144 122 Q156 134 168 122 L176 122 L176 112 L24 112 Z" fill="#FFFFFF" opacity=".92"/>
+        <path d="M38 88 Q50 100 62 88 Q74 100 86 88 Q98 100 110 88 Q122 100 134 88 Q146 100 158 88 L162 80 L38 80 Z" fill="#fff" opacity=".92"/>
+        <g fill="#7C83FF"><rect x="62" y="48" width="10" height="30" rx="3"/><rect x="95" y="44" width="10" height="34" rx="3"/><rect x="128" y="48" width="10" height="30" rx="3"/></g>
+        <g fill="#FFC978"><g class="flame"><path d="M67 28 Q58 40 67 46 Q76 40 67 28Z"/></g>
+        <g class="flame"><path d="M100 24 Q91 36 100 42 Q109 36 100 24Z"/></g>
+        <g class="flame"><path d="M133 28 Q124 40 133 46 Q142 40 133 28Z"/></g></g>
+        <g class="smoke" fill="none" stroke="#9A9CC0" stroke-width="3" stroke-linecap="round">
+          <path d="M67 40 Q60 28 67 18"/><path d="M100 36 Q93 24 100 14"/><path d="M133 40 Q126 28 133 18"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="ctrl">
+      <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <button class="btn" id="go">Open surprise</button>
+      <button class="btn soft" id="again" hidden>Celebrate again</button>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var STEPS = [
+    {text:"Today is a special day…", emoji:["🎈","✨"]},
+    {text:"Happy Birthday", big:true, name:true, cheer:true, emoji:["🎂","🎉","🎁"], burst:"pop",
+      note:"Wishing you a year full of smiles, success and good times, bhai.", btn:"Bring the cake"},
+    {text:"Make a wish…", cake:true, emoji:["🕯️","🌟"], btn:"Blow the candles"},
+    {text:"Wish granted!", name:true, cheer:true, out:true, emoji:["🎉","💖","🥳"], burst:"pop",
+      note:"Stay awesome, Yafi bhai. Enjoy your day to the fullest! 🎂", end:true}
+  ];
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var $ = function(i){return document.getElementById(i)};
+  var cap=$("caption"), boy=$("boy"), stage=$("stage"), go=$("go"), again=$("again"), fx=$("fx"),
+      nm=$("name"), note=$("note"), cake=$("cake"), hey=$("hey");
+  var dots=[].slice.call(document.querySelectorAll(".dots i"));
+  var idx=-1;
+
+  var sky=$("sky");
+  for(var s=0;s<40;s++){
+    var st=document.createElement("i"), sz=2+Math.random()*3;
+    st.style.cssText="left:"+Math.random()*100+"%;top:"+Math.random()*100+"%;width:"+sz+"px;height:"+sz+"px;animation-delay:"+Math.random()*3+"s";
+    sky.appendChild(st);
+  }
+
+  function face(happy){
+    $("eyesOpen").style.display=happy?"none":"";
+    $("eyesHappy").style.display=happy?"":"none";
+    $("smile").style.display=happy?"none":"";
+    $("grin").style.display=happy?"":"none";
+  }
+  function setCaption(text,big){
+    cap.innerHTML=""; cap.classList.toggle("big",!!big);
+    var sr=document.createElement("span"); sr.className="sr"; sr.textContent=text; cap.appendChild(sr);
+    var n=0;
+    text.split(" ").forEach(function(word,wi,arr){
+      var w=document.createElement("span"); w.className="w"; w.setAttribute("aria-hidden","true");
+      word.split("").forEach(function(ch){
+        var c=document.createElement("span"); c.className="ch"; c.style.setProperty("--d",n++); c.textContent=ch; w.appendChild(c);
+      });
+      cap.appendChild(w);
+      if(wi<arr.length-1) cap.appendChild(document.createTextNode(" "));
+    });
+  }
+  function render(i){
+    var st=STEPS[i];
+    setCaption(st.text,st.big);
+    face(!!st.cheer);
+    stage.classList.toggle("cheer",!!st.cheer);
+    nm.hidden=!st.name;
+    note.hidden=!st.note; if(st.note) note.textContent=st.note;
+    cake.hidden=!(st.cake||st.out);
+    cake.classList.toggle("out",!!st.out);
+    dots.forEach(function(d,k){d.classList.toggle("on",k<=i)});
+    floaters(st.emoji);
+    if(st.burst) burst(st.burst);
+    go.hidden=!!st.end; again.hidden=!st.end;
+    if(st.btn) go.textContent=st.btn;
+  }
+  function start(){
+    idx=-1; go.hidden=false; go.textContent="Open surprise"; again.hidden=true;
+    nm.hidden=true; note.hidden=true; cake.hidden=true; cake.classList.remove("out");
+    stage.classList.remove("cheer"); face(false);
+    dots.forEach(function(d){d.classList.remove("on")});
+    setCaption("I have something for you…");
+    scrollTo(0,0);
+  }
+  go.addEventListener("click",function(){ if(idx<STEPS.length-1){idx++; render(idx);} });
+  again.addEventListener("click",start);
+
+  var busy=false;
+  function poke(){
+    if(busy) return; busy=true;
+    var wasHappy=$("eyesHappy").style.display!=="none";
+    face(true);
+    hey.classList.remove("show"); hey.getBoundingClientRect(); hey.classList.add("show");
+    floaters(["🎈","😄"]);
+    setTimeout(function(){ face(wasHappy); hey.classList.remove("show"); busy=false; },900);
+  }
+  boy.addEventListener("click",poke);
+  boy.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();poke();} });
+  start();
+
+  function floaters(arr){
+    if(reduce||!arr) return;
+    for(var i=0;i<8;i++){
+      var s=document.createElement("span");
+      s.className="fl"; s.textContent=arr[i%arr.length];
+      s.style.left=(6+Math.random()*86)+"%";
+      s.style.fontSize=(22+Math.random()*22)+"px";
+      s.style.animationDelay=(Math.random()*.7)+"s";
+      s.addEventListener("animationend",function(){this.remove()});
+      fx.appendChild(s);
+    }
+  }
+
+  var cv=$("fxc"), ctx=cv.getContext("2d"), parts=[], run=false, W=0, H=0;
+  function size(){var d=devicePixelRatio||1; W=innerWidth; H=innerHeight; cv.width=W*d; cv.height=H*d; ctx.setTransform(d,0,0,d,0,0);}
+  addEventListener("resize",size); size();
+  var COL=["#F7A8C0","#FFC978","#E0527F","#C9B6FF","#8EE3C8"];
+  function burst(){
+    if(reduce) return;
+    var r=stage.getBoundingClientRect();
+    for(var k=0;k<110;k++){
+      var ang=-Math.PI/2+(Math.random()-.5)*2.6, sp=6+Math.random()*9;
+      parts.push({c:COL[(Math.random()*COL.length)|0], w:6+Math.random()*6, h:3+Math.random()*4,
+        a:Math.random()*6.28, va:(Math.random()-.5)*.3,
+        x:r.left+r.width/2, y:r.top+r.height*.4, vx:Math.cos(ang)*sp, vy:Math.sin(ang)*sp});
+    }
+    if(!run){run=true; requestAnimationFrame(tick);}
+  }
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    parts=parts.filter(function(p){return p.y<H+30});
+    parts.forEach(function(p){
+      p.vy+=.25; p.vx*=.99; p.x+=p.vx; p.y+=p.vy; p.a+=p.va;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.a);
+      ctx.fillStyle=p.c; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore();
+    });
+    if(parts.length) requestAnimationFrame(tick); else {run=false; ctx.clearRect(0,0,W,H);}
+  }
+})();
+</script>
+</body>
+</html>
